@@ -71,7 +71,7 @@ a_3 = sigmoid(z_3);
 y_t = zeros(m, num_labels);
 for i = 1:m
   y_t(i, y(i)) = 1;
- end
+end
 J = sum(sum(((-1.*y_t).*log(a_3) - (1 .+ (-1.*y_t)).*log(1 .+ (-1.*a_3))), 2));
 J = J / m;
 J += (lambda/(2*m))*(sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:, 2:end).^2)));
